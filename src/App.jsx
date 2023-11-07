@@ -17,7 +17,6 @@ function App() {
 		{ id: 8, category: 'Staff Areas', x: 1230, y: 510 },
 	];
 
-
 	function color(category) {
 		const categoryColors = {
 			Facilities: '#238AEA',
@@ -58,14 +57,14 @@ function App() {
 							</div>
 							<div className="flex grow flex-col overflow-y-auto bg-[#191A1B] pb-4">
 								<div className="flex h-16 shrink-0 flex-col items-center text-white mb-5">
-									<img className="absolute left-0 top-5" src="/ubc/logo.png" alt="Your Company" />
+									<img className="absolute left-0 top-5" src="/logo.png" alt="Your Company" />
 									<div className="text-xl absolute left-20 top-5">
 										<span className="text-[#C3D7F5]">UBC</span>Way
 									</div>
 									<p className="text-base leading-3 absolute left-20 top-12">Vancouver Campus</p>
 								</div>
 								<div className="relative">
-									<img src="/ubc/cover.png" alt="cover" className="w-full" />
+									<img src="/cover.png" alt="cover" className="w-full" />
 									<h1 className="text-lg absolute bottom-0 left-0 right-0 p-2 pl-5 text-white">
 										Sauder School of Business
 									</h1>
@@ -105,14 +104,14 @@ function App() {
 				<div className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
 					<div className="flex grow flex-col overflow-y-auto bg-[#191A1B] pb-4">
 						<div className="flex h-16 shrink-0 items-center text-white mb-5">
-							<img className="absolute left-0 top-5" src="/ubc/logo.png" alt="Your Company" />
+							<img className="absolute left-0 top-5" src="/logo.png" alt="Your Company" />
 							<div className="text-xl absolute left-20 top-5">
 								<span className="text-[#C3D7F5]">UBC</span>Way
 							</div>
 							<p className="text-base leading-3 absolute left-20 top-12">Vancouver Campus</p>
 						</div>
 						<div className="relative">
-							<img src="/ubc/cover.png" alt="cover" className="w-full" />
+							<img src="/cover.png" alt="cover" className="w-full" />
 							<h1 className="text-lg absolute bottom-0 left-0 right-0 p-2 pl-5 text-white">
 								Sauder School of Business
 							</h1>
@@ -174,7 +173,7 @@ function App() {
 			</div>
 
 			<img
-				src="/ubc/map.png"
+				src="/map.png"
 				alt="map"
 				className="object-cover w-screen h-screen"
 			/>
