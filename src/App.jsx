@@ -56,7 +56,7 @@ function App() {
       </div>
       <section id="what">
         <div className="h-screen flex justify-center items-center flex-col lg:flex-row">
-          <div className="-z-10 absolute max-[726px]:bg-[url('/business.png')] bg-[url('/business.png')] blur-xl opacity-70 h-screen w-full bg-no-repeat bg-cover"></div>
+          <div className="-z-10 absolute bg-[url('/business.png')] blur-xl opacity-70 h-screen w-full bg-no-repeat bg-cover"></div>
           <div className="flex flex-col">
             <div className="bg-[#000000d9] lg:py-6 p-6 rounded-none lg:rounded-xl">
               <div className="flex justify-center items-center">
@@ -65,10 +65,9 @@ function App() {
               <p className={`text-white max-w-2xl text-sm lg:text-xl mx-3 lg:mx-0 rounded ${showMore ? '' : 'max-h-36 overflow-hidden'}`}>
                 Our mission is to deliver a sophisticated Mapping Navigation System designed for both public use and internal utilization by students and staff, depending on your preferences.
                 <br></br><span className={`${showMore ? '' : 'blur-[2px]'}`}>
-                  PathNav empowers you <span className={`${showMore ? '' : 'blur-[2px]'}`}>to personalize and construct your own</span> <span className={`${showMore ? '' : 'blur-sm'}`}>map, enabling the public to effortlessly locate destinations and receive guided instructions on reaching specific points of interest.</span>
-                </span>
-                <br></br>Our commitment extends to equipping you with the necessary tools for achieving this customization. Moreover, we offer the option of collaborating with you to develop a tailored map that aligns precisely with your organizational needs, ensuring it becomes an invaluable asset at your disposal.
-              </p>
+                  PathNav empowers you </span><span className={`${showMore ? '' : 'blur-[2px]'}`}>to personalize and construct your own</span> <span className={`${showMore ? '' : 'blur-sm'}`}>map, enabling the public to effortlessly locate destinations and receive guided instructions on reaching specific points of interest.</span>
+                <br></br><span className={`${showMore ? '' : 'blur-sm'}`}>Our commitment extends to equipping you with the necessary tools for achieving this customization. Moreover, we offer the option of collaborating with you to develop a tailored map that aligns precisely with your organizational needs, ensuring it becomes an invaluable asset at your disposal.
+                </span></p>
               <div className="flex justify-center items-center lg:justify-start">
                 {showMore || (
                   <button className="px-4 py-2 text-2xl rounded border bg-white outline-0 ring-emerald-100 ring-0 focus:border-[#2c5f2c] focus:ring-2 mt-3" onClick={toggleShowMore}>
@@ -82,9 +81,9 @@ function App() {
         </div>
       </section>
       <section id="features">
-        <div className="h-screen flex justify-center items-center flex-col lg:flex-row">
+        <div className="h-auto lg:h-screen flex lg:justify-center items-center flex-col lg:flex-row">
           <div className="-z-10 absolute bg-[#0D440C] h-screen w-full bg-no-repeat bg-cover"></div>
-          <div className="bg-[#000000d9] lg:py-6 p-10 rounded-none lg:rounded-xl">
+          <div className="bg-[#000000d9] lg:py-6 p-10 rounded-none lg:rounded-xl w-full lg:w-auto">
             <div className="flex justify-center items-center">
               <h1 className="bg-custom bg-[#2c5f2c] bg-clip-text text-transparent text-[1.5rem] lg:text-[4rem] font-bold mx-5 lg:mx-0">FEATURE LIST</h1>
             </div>
@@ -99,20 +98,20 @@ function App() {
               <li>Other optional abilities</li>
             </ul>
           </div>
-          <img src="/feature.png" alt="" className="w-full lg:w-auto lg:rounded-xl lg:ml-10" />
+          <img src="/feature.png" alt="" className="w-full md:w-auto lg:rounded-xl lg:ml-10" />
         </div>
       </section>
       <section id="contact">
-        <div className="h-screen flex justify-center items-center flex-col lg:flex-row">
-          <div className="-z-10 absolute bg-[#899F85] h-full w-full bg-no-repeat bg-cover"></div>
-          <div className="bg-[#000000] lg:py-6 p-6 rounded-none lg:rounded-xl">
+        <div className="h-auto lg:h-screen flex justify-center items-center flex-col lg:flex-row">
+          <div className="-z-10 absolute bg-[#899F85] h-auto lg:h-full w-full bg-no-repeat bg-cover"></div>
+          <div className="bg-[#000000] lg:py-6 p-6 rounded-none lg:rounded-xl w-full lg:w-auto">
             <div className="flex justify-center items-center">
               <h1 className="bg-custom bg-[#2c5f2c] bg-clip-text text-transparent text-[1.5rem] lg:text-[4rem] font-bold mx-5 lg:mx-0">GET IN CONTACT!</h1>
             </div>
             <div className="text-white text-sm lg:text-xl flex justify-center w-full">
               <p>We got three different packages with</p>
             </div>
-            <div className="text-white text-sm lg:text-xl flex gap-10 justify-around w-full mt-6 lg:flex-row flex-col text-center">
+            <div className="text-white text-sm lg:text-xl flex gap-5 justify-center items-center lg:justify-around w-full mt-3 lg:flex-row flex-col text-center">
               <div className="max-w-lg">
                 <p className="text-gray-400">Basic Access</p>
                 <p className="mt-2">Includes website/app access (Fully Customized) Add buildings and rooms manually Cheapest Plan</p>
@@ -130,7 +129,7 @@ function App() {
               </div>
             </div>
             <div className="flex justify-center items-center">
-              <button className="px-6 py-3 text-xl rounded border bg-white outline-0 ring-emerald-100 ring-0 focus:border-[#2c5f2c] focus:ring-2 mt-6 lg:text-3xl" onClick={openModal}>Contact us!</button>
+              <button className="px-5 py-2 text-xl rounded border bg-white outline-0 ring-emerald-100 ring-0 focus:border-[#2c5f2c] focus:ring-2 mt-4 lg:text-3xl" onClick={openModal}>Contact us!</button>
             </div>
 
             {showModal && (
