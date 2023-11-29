@@ -83,7 +83,7 @@ function App() {
       </section>
       <section id="features">
         <div className="h-screen flex justify-center items-center flex-col lg:flex-row">
-          <div className="-z-10 absolute bg-[#103210] h-screen w-full bg-no-repeat bg-cover"></div>
+          <div className="-z-10 absolute bg-[#0D440C] h-screen w-full bg-no-repeat bg-cover"></div>
           <div className="bg-[#000000d9] lg:py-6 p-10 rounded-none lg:rounded-xl">
             <div className="flex justify-center items-center">
               <h1 className="bg-custom bg-[#2c5f2c] bg-clip-text text-transparent text-[1.5rem] lg:text-[4rem] font-bold mx-5 lg:mx-0">FEATURE LIST</h1>
@@ -104,7 +104,7 @@ function App() {
       </section>
       <section id="contact">
         <div className="h-screen flex justify-center items-center flex-col lg:flex-row">
-          <div className="-z-10 absolute bg-[#264f26] h-full w-full bg-no-repeat bg-cover"></div>
+          <div className="-z-10 absolute bg-[#899F85] h-full w-full bg-no-repeat bg-cover"></div>
           <div className="bg-[#000000] lg:py-6 p-6 rounded-none lg:rounded-xl">
             <div className="flex justify-center items-center">
               <h1 className="bg-custom bg-[#2c5f2c] bg-clip-text text-transparent text-[1.5rem] lg:text-[4rem] font-bold mx-5 lg:mx-0">GET IN CONTACT!</h1>
@@ -164,9 +164,14 @@ function App() {
                 </div>
               </div>
             )}
+
           </div>
         </div>
       </section>
+      <footer className="bg-[#0d270e] text-white py-4 text-center flex justify-center items-center flex-col">
+        <img src="/logo.svg" alt="logo" className="w-20 my-1" />
+        <p>© 2023 PathNav</p>
+      </footer>
     </div>
   )
 }
