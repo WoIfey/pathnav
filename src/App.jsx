@@ -104,7 +104,7 @@ function App() {
       </section>
       <section id="contact">
         <div className="h-screen flex justify-center items-center flex-col lg:flex-row">
-          <div className="-z-10 absolute bg-[#193519] h-full w-full bg-no-repeat bg-cover"></div>
+          <div className="-z-10 absolute bg-[#264f26] h-full w-full bg-no-repeat bg-cover"></div>
           <div className="bg-[#000000] lg:py-6 p-6 rounded-none lg:rounded-xl">
             <div className="flex justify-center items-center">
               <h1 className="bg-custom bg-[#2c5f2c] bg-clip-text text-transparent text-[1.5rem] lg:text-[4rem] font-bold mx-5 lg:mx-0">GET IN CONTACT!</h1>
@@ -152,7 +152,7 @@ function App() {
                     <div className="bg-white p-4">
                       <h2 className="text-2xl font-bold">Secret Code!</h2>
                       <p className="mb-3">Did you catch the letters?</p>
-                      <input type="text" autoFocus={true} maxLength={4} value={enteredCode} onChange={(e) => { code(e) }} className="uppercase px-2 py-1 text-2xl rounded border-2 bg-white outline-0 ring-emerald-100 ring-0 focus:border-[#2c5f2c] focus:ring-2" />
+                      <input type="text" autoFocus={true} maxLength={4} value={enteredCode} onChange={(e) => { code(e) }} className="uppercase py-1 text-2xl rounded border-2 bg-white outline-0 ring-emerald-100 ring-0 focus:border-[#2c5f2c] focus:ring-2" />
                       {success && (
                         <>
                           <p className="text-green-700 mt-10 text-center">Show this for a free tims bit!</p>
