@@ -35,7 +35,7 @@ function App() {
         <div className="flex flex-col gap-2 justify-center items-center">
           <ul className="absolute flex top-12 list-none bg-[#195E19] text-white p-2 rounded-full text-[14px] md:text-[18px]">
             <a href="#what">
-              <li className="w-28 md:w-32 text-center transition duration-150 hover:bg-[#458a45] rounded-full p-2 hover:text-white">
+              <li className="hidden sm:block w-28 md:w-32 text-center transition duration-150 hover:bg-[#458a45] rounded-full p-2 hover:text-white">
                 What we do
               </li>
             </a>
