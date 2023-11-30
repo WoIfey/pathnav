@@ -91,9 +91,9 @@ function App() {
               </div>
               <p className={`text-white max-w-2xl text-sm lg:text-xl mx-3 lg:mx-0 rounded ${showMore ? '' : 'max-h-36 overflow-hidden'}`}>
                 Our mission is to deliver a sophisticated Mapping Navigation System designed for both public use and internal utilization by students and staff, depending on your preferences.
-                <br></br><span className={`${showMore ? '' : 'blur-[2px]'}`}>
+                <br /><br /><span className={`${showMore ? '' : 'blur-[2px]'}`}>
                   PathNav empowers you </span><span className={`${showMore ? '' : 'blur-[2px]'}`}>to personalize and construct your own</span> <span className={`${showMore ? '' : 'blur-sm'}`}>map, enabling the public to effortlessly locate destinations and receive guided instructions on reaching specific points of interest.</span>
-                <br></br><span className={`${showMore ? '' : 'blur-sm'}`}>Our commitment extends to equipping you with the necessary tools for achieving this customization. Moreover, we offer the option of collaborating with you to develop a tailored map that aligns precisely with your organizational needs, ensuring it becomes an invaluable asset at your disposal.
+                <br /><br /><span className={`${showMore ? '' : 'blur-sm'}`}>Our commitment extends to equipping you with the necessary tools for achieving this customization. Moreover, we offer the option of collaborating with you to develop a tailored map that aligns precisely with your organizational needs, ensuring it becomes an invaluable asset at your disposal.
                 </span></p>
               <div className="flex justify-center items-center lg:justify-start">
                 {showMore || (
