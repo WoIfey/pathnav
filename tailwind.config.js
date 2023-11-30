@@ -8,7 +8,7 @@ module.exports = {
         montserrat: "Montserrat",
       },
       backgroundImage: {
-        custom: ["-webkit-linear-gradient(#163816, #195E19)"],
+        custom: ["-webkit-linear-gradient(#1FB12E, #113F09)"],
       },
       height: {
         'screen': [

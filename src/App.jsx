@@ -55,8 +55,8 @@ function App() {
         </div>
       </div>
       <section id="what">
-        <div className="h-screen flex justify-center items-center flex-col lg:flex-row">
-          <div className="-z-10 absolute bg-[url('/business.png')] blur-xl opacity-70 h-screen w-full bg-no-repeat bg-cover"></div>
+        <div className="h-auto lg:h-screen flex justify-center items-center flex-col lg:flex-row">
+          <div className="-z-20 absolute bg-[url('/business.png')] blur-xl opacity-70 h-full w-full bg-no-repeat bg-cover"></div>
           <div className="flex flex-col">
             <div className="bg-[#000000d9] lg:py-6 p-6 rounded-none lg:rounded-xl">
               <div className="flex justify-center items-center">
@@ -70,7 +70,7 @@ function App() {
                 </span></p>
               <div className="flex justify-center items-center lg:justify-start">
                 {showMore || (
-                  <button className="px-4 py-2 text-2xl rounded border bg-white outline-0 ring-emerald-100 ring-0 focus:border-[#2c5f2c] focus:ring-2 mt-3" onClick={toggleShowMore}>
+                  <button className="px-5 py-2 text-xl rounded border bg-white outline-0 ring-emerald-100 ring-0 focus:border-[#2c5f2c] focus:ring-2 mt-4 lg:text-3xl" onClick={toggleShowMore}>
                     Show More
                   </button>
                 )}
@@ -81,7 +81,7 @@ function App() {
         </div>
       </section>
       <section id="features">
-        <div className="h-auto lg:h-screen flex lg:justify-center items-center flex-col lg:flex-row">
+        <div className="h-auto lg:h-screen flex lg:justify-center items-center flex-col xl:flex-row">
           <div className="-z-10 absolute bg-[#0D440C] h-screen w-full bg-no-repeat bg-cover"></div>
           <div className="bg-[#000000d9] lg:py-6 p-10 rounded-none lg:rounded-xl w-full lg:w-auto">
             <div className="flex justify-center items-center">
@@ -98,7 +98,7 @@ function App() {
               <li>Other optional abilities</li>
             </ul>
           </div>
-          <img src="/feature.png" alt="" className="w-full md:w-auto lg:rounded-xl lg:ml-10" />
+          <img src="/features.png" alt="features" className="w-3/4 lg:w-auto md:w-1/2 lg:h-1/2 xl:h-auto xl:rounded-xl p-4 xl:p-0 xl:ml-10" />
         </div>
       </section>
       <section id="contact">
@@ -111,7 +111,7 @@ function App() {
             <div className="text-white text-sm lg:text-xl flex justify-center w-full">
               <p>We got three different packages with</p>
             </div>
-            <div className="text-white text-sm lg:text-xl flex gap-5 justify-center items-center lg:justify-around w-full mt-3 lg:flex-row flex-col text-center">
+            <div className="text-white text-sm lg:text-xl flex gap-5 justify-center items-center lg:justify-around w-full mt-3 xl:flex-row flex-col text-center">
               <div className="max-w-lg">
                 <p className="text-gray-400">Basic Access</p>
                 <p className="mt-2">Includes website/app access (Fully Customized) Add buildings and rooms manually Cheapest Plan</p>
