@@ -70,7 +70,7 @@ function App() {
           </ul>
           <img src="/logo.svg" alt="" className="lg:px-0 px-10" />
           <img src="/subhead.svg" alt="" className="lg:px-0 px-10" />
-          <div className="sm:hidden block absolute bottom-72">
+          <div className="sm:hidden block">
             <button className="m-2 animate-glow rounded-full" onClick={() => smoothScroll(whatRef)}>
               <img
                 src="arrow-down.svg"
