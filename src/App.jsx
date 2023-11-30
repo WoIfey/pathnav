@@ -1,10 +1,15 @@
-import { useState } from "react"
+import { useState, useRef } from "react"
 
 function App() {
   const [showModal, setShowModal] = useState(false)
   const [success, setSuccess] = useState(false)
-  const [showMore, setShowMore] = useState(false);
-  const [enteredCode, setEnteredCode] = useState("");
+  const [showMore, setShowMore] = useState(false)
+  const [enteredCode, setEnteredCode] = useState("")
+  const [typing, setTyping] = useState(false)
+  const [error, setError] = useState(false)
+  const whatRef = useRef(null)
+  const featuresRef = useRef(null)
+  const contactRef = useRef(null)
 
   const openModal = () => {
     setShowModal(true)
@@ -15,17 +20,30 @@ function App() {
   }
 
   const toggleShowMore = () => {
-    setShowMore(!showMore);
-  };
+    setShowMore(!showMore)
+  }
+
+  const smoothScroll = (ref) => {
+    ref.current.scrollIntoView({ behavior: "smooth" })
+  }
 
   const code = (e) => {
     const code = e.target.value.toUpperCase()
-    setEnteredCode(code);
-    if (code === 'TIMS') {
-      setSuccess(true)
-    } else {
-      setSuccess(false)
-    }
+    setEnteredCode(code)
+    setTyping(true)
+
+    setTimeout(() => {
+      if (code === 'TIMS') {
+        setSuccess(true)
+        setError(false)
+      } else {
+        setSuccess(false)
+        setError(true)
+        setTimeout(() => {
+          setError(false)
+        }, 2000)
+      }
+    }, 500)
   }
 
   return (
@@ -33,28 +51,37 @@ function App() {
       <div className="h-screen flex justify-center items-center">
         <div className="-z-10 absolute bg-[url('/ubc.svg')] h-screen w-full bg-no-repeat bg-cover blur-sm"></div>
         <div className="flex flex-col gap-2 justify-center items-center">
-          <ul className="absolute flex top-12 list-none bg-[#195E19] text-white p-2 rounded-full text-[14px] md:text-[18px]">
-            <a href="#what">
+          <ul className="absolute shadow-xl flex top-12 list-none bg-[#195E19] text-white p-2 rounded-full text-[14px] md:text-[18px]">
+            <button onClick={() => smoothScroll(whatRef)}>
               <li className="hidden sm:block w-28 md:w-32 text-center transition duration-150 hover:bg-[#458a45] rounded-full p-2 hover:text-white">
                 What we do
               </li>
-            </a>
-            <a href="#features">
-              <li className="w-28 md:w-32 text-center transition duration-150 hover:bg-[#458a45] rounded-full p-2 hover:text-white">
+            </button>
+            <button onClick={() => smoothScroll(featuresRef)}>
+              <li className="w-28 md:w-32 text-center transition duration-150 hover:bg-[#458a45] rounded-full p-2 hover:text-white" >
                 Features
               </li>
-            </a>
-            <a href="#contact">
-              <li className="w-28 md:w-32 text-center transition duration-150 hover:bg-[#458a45] rounded-full p-2 hover:text-white">
+            </button>
+            <button onClick={() => smoothScroll(contactRef)}>
+              <li className="w-28 md:w-32 text-center transition duration-150 hover:bg-[#458a45] rounded-full p-2 hover:text-white" >
                 Contact us
               </li>
-            </a>
+            </button>
           </ul>
           <img src="/logo.svg" alt="" className="lg:px-0 px-10" />
           <img src="/subhead.svg" alt="" className="lg:px-0 px-10" />
+          <div className="sm:hidden block absolute bottom-72">
+            <button className="m-2 animate-glow rounded-full" onClick={() => smoothScroll(whatRef)}>
+              <img
+                src="arrow-down.svg"
+                alt="down"
+                className="bg-[#2ac42a] shadow-2xl rounded-full p-2 w-12 h-12"
+              />
+            </button>
+          </div>
         </div>
       </div>
-      <section id="what">
+      <section id="what" ref={whatRef}>
         <div className="h-auto lg:h-screen flex justify-center items-center flex-col lg:flex-row">
           <div className="-z-20 absolute bg-[url('/business.png')] blur-xl opacity-70 h-full w-full bg-no-repeat bg-cover"></div>
           <div className="flex flex-col">
@@ -80,7 +107,7 @@ function App() {
           <img src="/business.png" alt="" className="w-full md:w-auto lg:rounded-xl lg:ml-10 max-[1280px]:hidden" />
         </div>
       </section>
-      <section id="features">
+      <section id="features" ref={featuresRef}>
         <div className="h-auto lg:h-screen flex lg:justify-center items-center flex-col xl:flex-row">
           <div className="-z-10 absolute bg-[#0D440C] h-screen w-full bg-no-repeat bg-cover"></div>
           <div className="bg-[#000000d9] lg:py-6 p-10 rounded-none lg:rounded-xl w-full lg:w-auto">
@@ -101,7 +128,7 @@ function App() {
           <img src="/features.png" alt="features" className="w-3/4 lg:w-auto md:w-1/2 lg:h-1/2 xl:h-auto xl:rounded-xl p-4 xl:p-0 xl:ml-10" />
         </div>
       </section>
-      <section id="contact">
+      <section id="contact" ref={contactRef}>
         <div className="h-auto lg:h-screen flex justify-center items-center flex-col lg:flex-row">
           <div className="-z-10 absolute bg-[#899F85] h-auto lg:h-full w-full bg-no-repeat bg-cover"></div>
           <div className="bg-[#000000] lg:py-6 p-6 rounded-none lg:rounded-xl w-full lg:w-auto">
@@ -150,13 +177,16 @@ function App() {
                   >
                     <div className="bg-white p-4">
                       <h2 className="text-2xl font-bold">Secret Code!</h2>
-                      <p className="mb-3">Did you catch the letters?</p>
-                      <input type="text" autoFocus={true} maxLength={4} value={enteredCode} onChange={(e) => { code(e) }} className="uppercase py-1 text-2xl rounded border-2 bg-white outline-0 ring-emerald-100 ring-0 focus:border-[#2c5f2c] focus:ring-2" />
-                      {success && (
-                        <>
-                          <p className="text-green-700 mt-10 text-center">Show this for a free tims bit!</p>
+                      <p className="mb-3">Did you see the letters?</p>
+                      <input type="text" autoFocus={true} maxLength={4} value={enteredCode} onChange={(e) => { code(e) }} className="max-w-[100px] uppercase px-2 py-1 text-2xl rounded border-2 bg-white outline-0 ring-emerald-100 ring-0 focus:border-[#2c5f2c] focus:ring-2" />
+                      {typing && error && (
+                        <p className="text-red-600 mt-2">Not quite right!</p>
+                      )}
+                      {typing && success && (
+                        <div>
+                          <p className="text-green-700 mt-6 text-center">Show this for a free tims bit!</p>
                           <img src="/bits.png" alt="bits!" className="w-72" />
-                        </>
+                        </div>
                       )}
                     </div>
                   </div>
