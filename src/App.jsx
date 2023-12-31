@@ -81,15 +81,9 @@ function App() {
           </div>
         </div>
       </div>
-<<<<<<< HEAD
-      <section id="what">
-        <div className="h-dvh flex justify-center items-center flex-col lg:flex-row">
-          <div className="-z-10 absolute bg-[url('/business.png')] blur-xl opacity-70 h-dvh w-full bg-no-repeat bg-cover"></div>
-=======
       <section id="what" ref={whatRef}>
-        <div className="h-auto lg:h-screen flex justify-center items-center flex-col lg:flex-row">
+        <div className="h-auto lg:h-dvh flex justify-center items-center flex-col lg:flex-row">
           <div className="-z-20 absolute bg-[url('/business.png')] blur-xl opacity-70 h-full w-full bg-no-repeat bg-cover"></div>
->>>>>>> da8738316bc0c9f25d83377124542f72fce8c441
           <div className="flex flex-col">
             <div className="bg-[#000000d9] lg:py-6 p-6 rounded-none lg:rounded-xl">
               <div className="flex justify-center items-center">
@@ -113,15 +107,9 @@ function App() {
           <img src="/business.png" alt="" className="w-full md:w-auto lg:rounded-xl lg:ml-10 max-[1280px]:hidden" />
         </div>
       </section>
-<<<<<<< HEAD
       <section id="features">
         <div className="h-auto lg:h-dvh flex lg:justify-center items-center flex-col lg:flex-row">
           <div className="-z-10 absolute bg-[#0D440C] h-dvh w-full bg-no-repeat bg-cover"></div>
-=======
-      <section id="features" ref={featuresRef}>
-        <div className="h-auto lg:h-screen flex lg:justify-center items-center flex-col xl:flex-row">
-          <div className="-z-10 absolute bg-[#0D440C] h-screen w-full bg-no-repeat bg-cover"></div>
->>>>>>> da8738316bc0c9f25d83377124542f72fce8c441
           <div className="bg-[#000000d9] lg:py-6 p-10 rounded-none lg:rounded-xl w-full lg:w-auto">
             <div className="flex justify-center items-center">
               <h1 className="bg-custom bg-[#2c5f2c] bg-clip-text text-transparent text-[1.5rem] lg:text-[4rem] font-bold mx-5 lg:mx-0">FEATURE LIST</h1>
@@ -140,13 +128,8 @@ function App() {
           <img src="/features.png" alt="features" className="w-3/4 lg:w-auto md:w-1/2 lg:h-1/2 xl:h-auto xl:rounded-xl p-4 xl:p-0 xl:ml-10" />
         </div>
       </section>
-<<<<<<< HEAD
       <section id="contact">
         <div className="h-auto lg:h-dvh flex justify-center items-center flex-col lg:flex-row">
-=======
-      <section id="contact" ref={contactRef}>
-        <div className="h-auto lg:h-screen flex justify-center items-center flex-col lg:flex-row">
->>>>>>> da8738316bc0c9f25d83377124542f72fce8c441
           <div className="-z-10 absolute bg-[#899F85] h-auto lg:h-full w-full bg-no-repeat bg-cover"></div>
           <div className="bg-[#000000] lg:py-6 p-6 rounded-none lg:rounded-xl w-full lg:w-auto">
             <div className="flex justify-center items-center">
