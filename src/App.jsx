@@ -30,8 +30,8 @@ function App() {
 
   return (
     <div className="font-montserrat">
-      <div className="h-screen flex justify-center items-center">
-        <div className="-z-10 absolute bg-[url('/ubc.svg')] h-screen w-full bg-no-repeat bg-cover blur-sm"></div>
+      <div className="h-dvh flex justify-center items-center">
+        <div className="-z-10 absolute bg-[url('/ubc.svg')] h-dvh w-full bg-no-repeat bg-cover blur-sm"></div>
         <div className="flex flex-col gap-2 justify-center items-center">
           <ul className="absolute flex top-12 list-none bg-[#195E19] text-white p-2 rounded-full text-[14px] md:text-[18px]">
             <a href="#what">
@@ -55,8 +55,8 @@ function App() {
         </div>
       </div>
       <section id="what">
-        <div className="h-screen flex justify-center items-center flex-col lg:flex-row">
-          <div className="-z-10 absolute bg-[url('/business.png')] blur-xl opacity-70 h-screen w-full bg-no-repeat bg-cover"></div>
+        <div className="h-dvh flex justify-center items-center flex-col lg:flex-row">
+          <div className="-z-10 absolute bg-[url('/business.png')] blur-xl opacity-70 h-dvh w-full bg-no-repeat bg-cover"></div>
           <div className="flex flex-col">
             <div className="bg-[#000000d9] lg:py-6 p-6 rounded-none lg:rounded-xl">
               <div className="flex justify-center items-center">
@@ -81,8 +81,8 @@ function App() {
         </div>
       </section>
       <section id="features">
-        <div className="h-auto lg:h-screen flex lg:justify-center items-center flex-col lg:flex-row">
-          <div className="-z-10 absolute bg-[#0D440C] h-screen w-full bg-no-repeat bg-cover"></div>
+        <div className="h-auto lg:h-dvh flex lg:justify-center items-center flex-col lg:flex-row">
+          <div className="-z-10 absolute bg-[#0D440C] h-dvh w-full bg-no-repeat bg-cover"></div>
           <div className="bg-[#000000d9] lg:py-6 p-10 rounded-none lg:rounded-xl w-full lg:w-auto">
             <div className="flex justify-center items-center">
               <h1 className="bg-custom bg-[#2c5f2c] bg-clip-text text-transparent text-[1.5rem] lg:text-[4rem] font-bold mx-5 lg:mx-0">FEATURE LIST</h1>
@@ -102,7 +102,7 @@ function App() {
         </div>
       </section>
       <section id="contact">
-        <div className="h-auto lg:h-screen flex justify-center items-center flex-col lg:flex-row">
+        <div className="h-auto lg:h-dvh flex justify-center items-center flex-col lg:flex-row">
           <div className="-z-10 absolute bg-[#899F85] h-auto lg:h-full w-full bg-no-repeat bg-cover"></div>
           <div className="bg-[#000000] lg:py-6 p-6 rounded-none lg:rounded-xl w-full lg:w-auto">
             <div className="flex justify-center items-center">
@@ -134,7 +134,7 @@ function App() {
 
             {showModal && (
               <div className="fixed z-10 inset-0 overflow-y-auto">
-                <div className="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:p-0">
+                <div className="flex items-center justify-center min-h-dvh pt-4 px-4 pb-20 text-center sm:p-0">
                   <div
                     className="fixed inset-0 transition-opacity"
                     aria-hidden="true"
