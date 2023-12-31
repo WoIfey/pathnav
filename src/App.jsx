@@ -68,12 +68,12 @@ function App() {
               </li>
             </button>
           </ul>
-          <img src="/logo.svg" alt="" className="lg:px-0 px-10" />
-          <img src="/subhead.svg" alt="" className="lg:px-0 px-10" />
+          <img src="/pathnav/logo.svg" alt="" className="lg:px-0 px-10" />
+          <img src="/pathnav/subhead.svg" alt="" className="lg:px-0 px-10" />
           <div className="sm:hidden block">
             <button className="m-2 animate-glow rounded-full" onClick={() => smoothScroll(whatRef)}>
               <img
-                src="arrow-down.svg"
+                src="/pathnav/arrow-down.svg"
                 alt="down"
                 className="bg-[#2ac42a] shadow-2xl rounded-full p-2 w-12 h-12"
               />
@@ -104,7 +104,7 @@ function App() {
               </div>
             </div>
           </div>
-          <img src="/business.png" alt="" className="w-full md:w-auto lg:rounded-xl lg:ml-10 max-[1280px]:hidden" />
+          <img src="/pathnav/business.png" alt="" className="w-full md:w-auto lg:rounded-xl lg:ml-10 max-[1280px]:hidden" />
         </div>
       </section>
       <section id="features">
@@ -125,7 +125,7 @@ function App() {
               <li>Other optional abilities</li>
             </ul>
           </div>
-          <img src="/features.png" alt="features" className="w-3/4 lg:w-auto md:w-1/2 lg:h-1/2 xl:h-auto xl:rounded-xl p-4 xl:p-0 xl:ml-10" />
+          <img src="/pathnav/features.png" alt="features" className="w-3/4 lg:w-auto md:w-1/2 lg:h-1/2 xl:h-auto xl:rounded-xl p-4 xl:p-0 xl:ml-10" />
         </div>
       </section>
       <section id="contact">
@@ -185,7 +185,7 @@ function App() {
                       {typing && success && (
                         <div>
                           <p className="text-green-700 mt-6 text-center">Show this for a free tims bit!</p>
-                          <img src="/bits.png" alt="bits!" className="w-72" />
+                          <img src="/pathnav/bits.png" alt="bits!" className="w-72" />
                         </div>
                       )}
                     </div>
@@ -198,7 +198,7 @@ function App() {
         </div>
       </section>
       <footer className="bg-[#0d270e] text-white py-4 text-center flex justify-center items-center flex-col">
-        <img src="/logo.svg" alt="logo" className="w-20 my-1" />
+        <img src="/pathnav/logo.svg" alt="logo" className="w-20 my-1" />
         <p>© 2023 PathNav</p>
       </footer>
     </div>
