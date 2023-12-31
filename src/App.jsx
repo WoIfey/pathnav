@@ -1,10 +1,15 @@
-import { useState } from "react"
+import { useState, useRef } from "react"
 
 function App() {
   const [showModal, setShowModal] = useState(false)
   const [success, setSuccess] = useState(false)
-  const [showMore, setShowMore] = useState(false);
-  const [enteredCode, setEnteredCode] = useState("");
+  const [showMore, setShowMore] = useState(false)
+  const [enteredCode, setEnteredCode] = useState("")
+  const [typing, setTyping] = useState(false)
+  const [error, setError] = useState(false)
+  const whatRef = useRef(null)
+  const featuresRef = useRef(null)
+  const contactRef = useRef(null)
 
   const openModal = () => {
     setShowModal(true)
@@ -15,17 +20,30 @@ function App() {
   }
 
   const toggleShowMore = () => {
-    setShowMore(!showMore);
-  };
+    setShowMore(!showMore)
+  }
+
+  const smoothScroll = (ref) => {
+    ref.current.scrollIntoView({ behavior: "smooth" })
+  }
 
   const code = (e) => {
     const code = e.target.value.toUpperCase()
-    setEnteredCode(code);
-    if (code === 'TIMS') {
-      setSuccess(true)
-    } else {
-      setSuccess(false)
-    }
+    setEnteredCode(code)
+    setTyping(true)
+
+    setTimeout(() => {
+      if (code === 'TIMS') {
+        setSuccess(true)
+        setError(false)
+      } else {
+        setSuccess(false)
+        setError(true)
+        setTimeout(() => {
+          setError(false)
+        }, 2000)
+      }
+    }, 500)
   }
 
   return (
@@ -33,30 +51,45 @@ function App() {
       <div className="h-dvh flex justify-center items-center">
         <div className="-z-10 absolute bg-[url('/ubc.svg')] h-dvh w-full bg-no-repeat bg-cover blur-sm"></div>
         <div className="flex flex-col gap-2 justify-center items-center">
-          <ul className="absolute flex top-12 list-none bg-[#195E19] text-white p-2 rounded-full text-[14px] md:text-[18px]">
-            <a href="#what">
-              <li className="w-28 md:w-32 text-center transition duration-150 hover:bg-[#458a45] rounded-full p-2 hover:text-white">
+          <ul className="absolute shadow-xl flex top-12 list-none bg-[#195E19] text-white p-2 rounded-full text-[14px] md:text-[18px]">
+            <button onClick={() => smoothScroll(whatRef)}>
+              <li className="hidden sm:block w-28 md:w-32 text-center transition duration-150 hover:bg-[#458a45] rounded-full p-2 hover:text-white">
                 What we do
               </li>
-            </a>
-            <a href="#features">
-              <li className="w-28 md:w-32 text-center transition duration-150 hover:bg-[#458a45] rounded-full p-2 hover:text-white">
+            </button>
+            <button onClick={() => smoothScroll(featuresRef)}>
+              <li className="w-28 md:w-32 text-center transition duration-150 hover:bg-[#458a45] rounded-full p-2 hover:text-white" >
                 Features
               </li>
-            </a>
-            <a href="#contact">
-              <li className="w-28 md:w-32 text-center transition duration-150 hover:bg-[#458a45] rounded-full p-2 hover:text-white">
+            </button>
+            <button onClick={() => smoothScroll(contactRef)}>
+              <li className="w-28 md:w-32 text-center transition duration-150 hover:bg-[#458a45] rounded-full p-2 hover:text-white" >
                 Contact us
               </li>
-            </a>
+            </button>
           </ul>
           <img src="/logo.svg" alt="" className="lg:px-0 px-10" />
           <img src="/subhead.svg" alt="" className="lg:px-0 px-10" />
+          <div className="sm:hidden block">
+            <button className="m-2 animate-glow rounded-full" onClick={() => smoothScroll(whatRef)}>
+              <img
+                src="arrow-down.svg"
+                alt="down"
+                className="bg-[#2ac42a] shadow-2xl rounded-full p-2 w-12 h-12"
+              />
+            </button>
+          </div>
         </div>
       </div>
+<<<<<<< HEAD
       <section id="what">
         <div className="h-dvh flex justify-center items-center flex-col lg:flex-row">
           <div className="-z-10 absolute bg-[url('/business.png')] blur-xl opacity-70 h-dvh w-full bg-no-repeat bg-cover"></div>
+=======
+      <section id="what" ref={whatRef}>
+        <div className="h-auto lg:h-screen flex justify-center items-center flex-col lg:flex-row">
+          <div className="-z-20 absolute bg-[url('/business.png')] blur-xl opacity-70 h-full w-full bg-no-repeat bg-cover"></div>
+>>>>>>> da8738316bc0c9f25d83377124542f72fce8c441
           <div className="flex flex-col">
             <div className="bg-[#000000d9] lg:py-6 p-6 rounded-none lg:rounded-xl">
               <div className="flex justify-center items-center">
@@ -64,13 +97,13 @@ function App() {
               </div>
               <p className={`text-white max-w-2xl text-sm lg:text-xl mx-3 lg:mx-0 rounded ${showMore ? '' : 'max-h-36 overflow-hidden'}`}>
                 Our mission is to deliver a sophisticated Mapping Navigation System designed for both public use and internal utilization by students and staff, depending on your preferences.
-                <br></br><span className={`${showMore ? '' : 'blur-[2px]'}`}>
+                <br /><br /><span className={`${showMore ? '' : 'blur-[2px]'}`}>
                   PathNav empowers you </span><span className={`${showMore ? '' : 'blur-[2px]'}`}>to personalize and construct your own</span> <span className={`${showMore ? '' : 'blur-sm'}`}>map, enabling the public to effortlessly locate destinations and receive guided instructions on reaching specific points of interest.</span>
-                <br></br><span className={`${showMore ? '' : 'blur-sm'}`}>Our commitment extends to equipping you with the necessary tools for achieving this customization. Moreover, we offer the option of collaborating with you to develop a tailored map that aligns precisely with your organizational needs, ensuring it becomes an invaluable asset at your disposal.
+                <br /><br /><span className={`${showMore ? '' : 'blur-sm'}`}>Our commitment extends to equipping you with the necessary tools for achieving this customization. Moreover, we offer the option of collaborating with you to develop a tailored map that aligns precisely with your organizational needs, ensuring it becomes an invaluable asset at your disposal.
                 </span></p>
               <div className="flex justify-center items-center lg:justify-start">
                 {showMore || (
-                  <button className="px-4 py-2 text-2xl rounded border bg-white outline-0 ring-emerald-100 ring-0 focus:border-[#2c5f2c] focus:ring-2 mt-3" onClick={toggleShowMore}>
+                  <button className="px-5 py-2 text-xl rounded border bg-white outline-0 ring-emerald-100 ring-0 focus:border-[#2c5f2c] focus:ring-2 mt-4 lg:text-3xl" onClick={toggleShowMore}>
                     Show More
                   </button>
                 )}
@@ -80,9 +113,15 @@ function App() {
           <img src="/business.png" alt="" className="w-full md:w-auto lg:rounded-xl lg:ml-10 max-[1280px]:hidden" />
         </div>
       </section>
+<<<<<<< HEAD
       <section id="features">
         <div className="h-auto lg:h-dvh flex lg:justify-center items-center flex-col lg:flex-row">
           <div className="-z-10 absolute bg-[#0D440C] h-dvh w-full bg-no-repeat bg-cover"></div>
+=======
+      <section id="features" ref={featuresRef}>
+        <div className="h-auto lg:h-screen flex lg:justify-center items-center flex-col xl:flex-row">
+          <div className="-z-10 absolute bg-[#0D440C] h-screen w-full bg-no-repeat bg-cover"></div>
+>>>>>>> da8738316bc0c9f25d83377124542f72fce8c441
           <div className="bg-[#000000d9] lg:py-6 p-10 rounded-none lg:rounded-xl w-full lg:w-auto">
             <div className="flex justify-center items-center">
               <h1 className="bg-custom bg-[#2c5f2c] bg-clip-text text-transparent text-[1.5rem] lg:text-[4rem] font-bold mx-5 lg:mx-0">FEATURE LIST</h1>
@@ -98,11 +137,16 @@ function App() {
               <li>Other optional abilities</li>
             </ul>
           </div>
-          <img src="/feature.png" alt="" className="w-full md:w-auto lg:rounded-xl lg:ml-10" />
+          <img src="/features.png" alt="features" className="w-3/4 lg:w-auto md:w-1/2 lg:h-1/2 xl:h-auto xl:rounded-xl p-4 xl:p-0 xl:ml-10" />
         </div>
       </section>
+<<<<<<< HEAD
       <section id="contact">
         <div className="h-auto lg:h-dvh flex justify-center items-center flex-col lg:flex-row">
+=======
+      <section id="contact" ref={contactRef}>
+        <div className="h-auto lg:h-screen flex justify-center items-center flex-col lg:flex-row">
+>>>>>>> da8738316bc0c9f25d83377124542f72fce8c441
           <div className="-z-10 absolute bg-[#899F85] h-auto lg:h-full w-full bg-no-repeat bg-cover"></div>
           <div className="bg-[#000000] lg:py-6 p-6 rounded-none lg:rounded-xl w-full lg:w-auto">
             <div className="flex justify-center items-center">
@@ -111,7 +155,7 @@ function App() {
             <div className="text-white text-sm lg:text-xl flex justify-center w-full">
               <p>We got three different packages with</p>
             </div>
-            <div className="text-white text-sm lg:text-xl flex gap-5 justify-center items-center lg:justify-around w-full mt-3 lg:flex-row flex-col text-center">
+            <div className="text-white text-sm lg:text-xl flex gap-5 justify-center items-center lg:justify-around w-full mt-3 xl:flex-row flex-col text-center">
               <div className="max-w-lg">
                 <p className="text-gray-400">Basic Access</p>
                 <p className="mt-2">Includes website/app access (Fully Customized) Add buildings and rooms manually Cheapest Plan</p>
@@ -150,13 +194,16 @@ function App() {
                   >
                     <div className="bg-white p-4">
                       <h2 className="text-2xl font-bold">Secret Code!</h2>
-                      <p className="mb-3">Did you catch the letters?</p>
-                      <input type="text" autoFocus={true} maxLength={4} value={enteredCode} onChange={(e) => { code(e) }} className="uppercase py-1 text-2xl rounded border-2 bg-white outline-0 ring-emerald-100 ring-0 focus:border-[#2c5f2c] focus:ring-2" />
-                      {success && (
-                        <>
-                          <p className="text-green-700 mt-10 text-center">Show this for a free tims bit!</p>
+                      <p className="mb-3">Did you see the letters?</p>
+                      <input type="text" autoFocus={true} maxLength={4} value={enteredCode} onChange={(e) => { code(e) }} className="max-w-[100px] uppercase px-2 py-1 text-2xl rounded border-2 bg-white outline-0 ring-emerald-100 ring-0 focus:border-[#2c5f2c] focus:ring-2" />
+                      {typing && error && (
+                        <p className="text-red-600 mt-2">Not quite right!</p>
+                      )}
+                      {typing && success && (
+                        <div>
+                          <p className="text-green-700 mt-6 text-center">Show this for a free tims bit!</p>
                           <img src="/bits.png" alt="bits!" className="w-72" />
-                        </>
+                        </div>
                       )}
                     </div>
                   </div>

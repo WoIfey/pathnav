@@ -2,3 +2,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes glow {
+    0% {
+        background-color: #2ac42a;
+        box-shadow: 0 0 5px #2ac42a, 0 0 10px #2ac42a, 0 0 15px #2ac42a, 0 0 20px #2ac42a;
+    }
+
+    50% {
+        background-color: #30b930;
+        box-shadow: 0 0 10px #30b930, 0 0 15px #30b930, 0 0 20px #30b930, 0 0 30px #30b930;
+    }
+
+    100% {
+        background-color: #2ac42a;
+        box-shadow: 0 0 5px #2ac42a, 0 0 10px #2ac42a, 0 0 15px #2ac42a, 0 0 20px #2ac42a;
+    }
+}
+
+.animate-glow {
+    animation: glow 2s ease-in-out infinite;
+}
